@@ -6,6 +6,12 @@ use App\Models\Order;
 
 class Service
 {
+    /**
+     * Unique key used to store settings 
+     * for this service.
+     * 
+     * @return string
+     */
     public static $key = 'example'; 
 
     public function __construct(Order $order)
@@ -148,6 +154,29 @@ class Service
                 "rules" => ['required'], // laravel validation rules
             ],
         ];    
+    }
+
+    /**
+     * Define buttons shown at order management page
+     *
+     * @return array
+     */
+    public static function setServiceButtons(): array
+    {
+        $login_to_panel = settings('encrypted::pterodactyl::sso_secret') ? [
+            "name" => __('client.login_to_panel'),
+            "icon" => '<i class="bx bx-terminal"></i>',
+            "color" => "primary",
+            "href" => route('pterodactyl.login'),
+            "target" => "_blank",
+        ] : [];
+
+        $server_ip = [
+            "name" => '123.456.83.231',
+            "color" => "primary",
+        ];
+
+        return [$login_to_panel, $server_ip];    
     }
 
     /**
