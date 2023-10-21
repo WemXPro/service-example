@@ -2,9 +2,11 @@
 
 namespace App\Services\Example;
 
+use App\Services\ServiceInterface;
+use App\Models\Package;
 use App\Models\Order;
 
-class Service
+class Service implements ServiceInterface
 {
     /**
      * Unique key used to store settings 
@@ -56,7 +58,7 @@ class Service
      *
      * @return array
      */
-    public static function setPackageConfig(): array
+    public static function setPackageConfig(Package $package): array
     {
         return [];
     }
@@ -69,9 +71,9 @@ class Service
      *
      * @return array
      */
-    public static function setCheckoutConfig(): array
+    public static function setCheckoutConfig(Package $package): array
     {
-        return [];    
+        return [];
     }
 
     /**
@@ -79,7 +81,7 @@ class Service
      *
      * @return array
      */
-    public static function setServiceButtons(): array
+    public static function setServiceButtons(Order $order): array
     {
         return [];    
     }
