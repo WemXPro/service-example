@@ -1,10 +1,10 @@
 {
-    "name": "wemx/universal",
-    "description": "",
+    "name": "wemx/service-example",
+    "description": "A example service for developers",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "WemX",
+            "email": "mubeen@wemx.net"
         }
     ],
     "extra": {

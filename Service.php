@@ -89,9 +89,23 @@ class Service implements ServiceInterface
     /**
      * This function is responsible for creating an instance of the
      * service. This can be anything such as a server, vps or any other instance.
-     * @return Renderable
+     * 
+     * @return void
      */
     public function create(array $data = [])
+    {
+        return [];
+    }
+
+    /**
+     * This function is responsible for upgrading or downgrading
+     * an instance of this service. This method is optional
+     * If your service doesn't support upgrading, remove this method.
+     * 
+     * Optional
+     * @return void
+    */
+    public function upgrade(Package $oldPackage, Package $newPackage)
     {
         return [];
     }
@@ -100,7 +114,8 @@ class Service implements ServiceInterface
      * This function is responsible for suspending an instance of the
      * service. This method is called when a order is expired or
      * suspended by an admin
-     * @return Renderable
+     * 
+     * @return void
     */
     public function suspend(array $data = [])
     {
@@ -111,7 +126,8 @@ class Service implements ServiceInterface
      * This function is responsible for unsuspending an instance of the
      * service. This method is called when a order is activated or
      * unsuspended by an admin
-     * @return Renderable
+     * 
+     * @return void
     */
     public function unsuspend(array $data = [])
     {
@@ -121,7 +137,8 @@ class Service implements ServiceInterface
     /**
      * This function is responsible for deleting an instance of the
      * service. This can be anything such as a server, vps or any other instance.
-     * @return Renderable
+     * 
+     * @return void
     */
     public function terminate(array $data = [])
     {
