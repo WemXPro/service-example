@@ -1,5 +1,6 @@
 {
     "name": "wemx/service-example",
+    "type": "laravel-module",
     "description": "A example service for developers",
     "authors": [
         {
